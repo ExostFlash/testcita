@@ -25,4 +25,9 @@ export class TaskService {
     this.tasks.push(newTask);
     this.tasksSubject.next([...this.tasks]);
   }
+
+  removeTask(id: number) {
+    this.tasks = this.tasks.filter(task => task.id !== id);
+    this.tasksSubject.next([...this.tasks]);
+  }
 }

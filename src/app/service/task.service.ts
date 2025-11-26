@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
+export interface TaskItem {
+  id: number;
+  title: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,11 +22,11 @@ export class TaskService {
     return of(this.tasks).pipe(delay(1000));
   }
 
-  private tasksSubject = new BehaviorSubject(this.tasks);
+  private tasksSubject = new BehaviorSubject<TaskItem[]>(this.tasks);
   tasks$ = this.tasksSubject.asObservable();
 
   addTask(title: string) {
-    const newTask = { id: this.nextId++, title: title.trim() };
+    const newTask: TaskItem = { id: this.nextId++, title: title.trim() };
     this.tasks.push(newTask);
     this.tasksSubject.next([...this.tasks]);
   }

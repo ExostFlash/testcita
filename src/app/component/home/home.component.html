@@ -1,15 +1,16 @@
 <h1>home works!</h1>
 
 <h2>Task List</h2>
-<ng-container *ngIf="tasks$ | async as tasks; else loading">
-    <ul>
-        <li *ngFor="let task of tasks">
-            {{ task.title }}
-        </li>
-    </ul>
-</ng-container>
-<ng-template #loading>
-    <p>Loading tasks...</p>
-</ng-template>
+@if (tasks$ | async; as tasks) {
+  <ul>
+    @for (task of tasks; track task) {
+      <li>
+        {{ task.title }}
+      </li>
+    }
+  </ul>
+} @else {
+  <p>Loading tasks...</p>
+}
 
 <p>Temps écoulé : {{ count / 2 }} secondes</p>

@@ -11,6 +11,7 @@ import { TaskService } from '../../service/task.service';
 })
 export class HomeComponent {
   protected count = 0;
+  private intervalId: any;
 
   tasks$!: ReturnType<TaskService['getTasks']>;
 
@@ -19,10 +20,15 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.count++;
-      console.log(this.count);
     }, 500);
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
 }

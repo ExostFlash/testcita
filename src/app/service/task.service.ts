@@ -1,14 +1,28 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  private tasks = [{id: 1 , title: 'Sample Task'}, {id: 2, title: 'Another Task'}, {id: 3, title: 'More Tasks'}];
+  private tasks = [
+    { id: 1, title: 'Sample Task' },
+    { id: 2, title: 'Another Task' },
+    { id: 3, title: 'More Tasks' }
+  ];
+  private nextId = this.tasks.length > 0 ? Math.max(...this.tasks.map(t => t.id)) + 1 : 1;
 
   getTasks() {
     return of(this.tasks).pipe(delay(1000));
+  }
+
+  private tasksSubject = new BehaviorSubject(this.tasks);
+  tasks$ = this.tasksSubject.asObservable();
+
+  addTask(title: string) {
+    const newTask = { id: this.nextId++, title: title.trim() };
+    this.tasks.push(newTask);
+    this.tasksSubject.next([...this.tasks]);
   }
 }

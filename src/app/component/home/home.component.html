@@ -1,4 +1,4 @@
-<h1>home works!</h1>
+<h1>Home works!</h1>
 
 <h2>Task List</h2>
 @if (tasks$ | async; as tasks) {
@@ -13,4 +13,7 @@
   <p>Loading tasks...</p>
 }
 
-<p>Temps écoulé : {{ count / 2 }} secondes</p>
+<p>Elapsed time: <span style="font-family:monospace;font-size:1.2em">{{ elapsedClock }}</span></p>
+
+<!-- Add a task -->
+<button (click)="addTask('New Task')">+ Add a task</button>

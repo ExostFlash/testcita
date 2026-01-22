@@ -55,4 +55,12 @@ export class TasksPageComponent {
   addTask(title: string) {
     this.taskService.addTask(title);
   }
+
+  toggleValidated(id: number) {
+    this.taskService.toggleValidated(id);
+  }
+
+  toggleHighlighted(id: number) {
+    this.taskService.toggleHighlighted(id);
+  }
 }

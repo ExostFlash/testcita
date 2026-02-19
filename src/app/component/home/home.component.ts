@@ -57,9 +57,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     forkJoin({
-      citations: this.http.get<Citation[]>('/data/demoCitations.json'),
-      faq: this.http.get<FaqItem[]>('/data/faq.json'),
-      roadmaps: this.http.get<Record<string, Roadmap>>('/data/appsVersions.json')
+      citations: this.http.get<Citation[]>('data/demoCitations.json'),
+      faq: this.http.get<FaqItem[]>('data/faq.json'),
+      roadmaps: this.http.get<Record<string, Roadmap>>('data/appsVersions.json')
     }).subscribe({
       next: ({ citations, faq, roadmaps }) => {
         this.citations = citations ?? [];

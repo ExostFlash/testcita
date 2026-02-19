@@ -26,7 +26,7 @@ jobs:
         run: npm i
 
       - name: Build Angular
-        run: npm run build -- --configuration production --base-href /testcita/
+        run: npm run build -- --configuration production --base-href /${{ github.event.repository.name }}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

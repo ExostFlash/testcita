@@ -24,6 +24,9 @@ const routes = [
 
 const indexHtml = fs.readFileSync(indexPath, 'utf8');
 
+// GitHub Pages SPA fallback
+fs.writeFileSync(path.join(outputRoot, '404.html'), indexHtml);
+
 routes
   .filter((route) => route.length > 0)
   .forEach((route) => {
@@ -32,4 +35,4 @@ routes
     fs.writeFileSync(path.join(routeDir, 'index.html'), indexHtml);
   });
 
-console.log(`[prerender] Generated ${routes.length - 1} route HTML files.`);
+console.log(`[prerender] Generated ${routes.length - 1} route HTML files and 404.html fallback.`);

@@ -18,8 +18,8 @@
             </button>
             <!-- Navigation centrée desktop -->
             <nav class="hidden xl-strict:flex gap-10 text-lg font-medium justify-center flex-1 ml-8">
-                <a href="/#features" class="nav-link">Fonctionnalités</a>
-                <a href="/#faq" class="nav-link">FAQ</a>
+                <a routerLink="/#features" class="nav-link">Fonctionnalités</a>
+                <a routerLink="/#faq" class="nav-link">FAQ</a>
                 <a routerLink="/contact" class="nav-link">Contact</a>
             </nav>
             <!-- Bouton desktop -->
@@ -49,9 +49,9 @@
                 </a>
             </div>
         <nav class="flex flex-col items-center gap-6 w-full">
-            <a href="/#features" class="close-mobile-menu hover:underline text-xl">Fonctionnalités</a>
-            <a href="/#faq" class="close-mobile-menu hover:underline text-xl">FAQ</a>
-            <a href="/contact" class="close-mobile-menu hover:underline text-xl">Contact</a>
+            <a routerLink="/#features" class="close-mobile-menu hover:underline text-xl">Fonctionnalités</a>
+            <a routerLink="/#faq" class="close-mobile-menu hover:underline text-xl">FAQ</a>
+            <a routerLink="/contact" class="close-mobile-menu hover:underline text-xl">Contact</a>
         </nav>
         <a href="https://discord.gg/dRjUH5qKZQ" class="close-mobile-menu btn-primary-effect mt-8 px-8 py-3 rounded-full text-white shadow text-lg" style="background: var(--linear-gradient);">🚀 Rejoindre</a>
     </div>
@@ -68,7 +68,7 @@
 		<span class="font-semibold text-white text-lg drop-shadow-lg" style="width: 73%">CitaPote n’est pas encore disponible publiquement.</span>
 		</div>
 		<div class="flex gap-4 mt-2">
-		<a href="/don" class="btn-primary-effect mt-1 px-5 py-2 rounded-full flex items-center gap-2 text-white bg-[var(--secondary-color)] font-semibold shadow-lg text-base self-center hover:scale-105 transition">
+		<a routerLink="/don" class="btn-primary-effect mt-1 px-5 py-2 rounded-full flex items-center gap-2 text-white bg-[var(--secondary-color)] font-semibold shadow-lg text-base self-center hover:scale-105 transition">
 			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24">
 			<path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
 			</svg>
@@ -91,7 +91,7 @@
 		<span class="text-3xl drop-shadow-lg">🍪</span>
 		<span class="font-semibold text-white text-sm drop-shadow-lg" style="width: 73%">
 			CitaPote utilise des cookies pour améliorer votre expérience. Acceptez-vous ?
-			<a href="/gestion-des-cookies" class="text-sm text-[var(--secondary-color)] hover:underline underline hover:text-white transition-colors">
+			<a routerLink="/gestion-des-cookies" class="text-sm text-[var(--secondary-color)] hover:underline underline hover:text-white transition-colors">
 			En savoir plus
 			</a>
 		</span>

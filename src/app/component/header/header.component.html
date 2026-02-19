@@ -1,8 +1,138 @@
-<header class="header">
-	<nav>
-		<a routerLink="/" [class.active]="isHomeActive()">Home</a>
-		|
-		<a routerLink="/tasks" routerLinkActive="active">Tasks</a>
-		<a routerLink="/about" routerLinkActive="active">About</a>
-	</nav>
+<header>
+
+    <!-- Header global -->
+    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] md:w-[70%] nav-glass rounded-full py-3 px-6 flex items-center justify-between main-header">
+        <div class="flex items-center gap-2 w-full relative">
+            <a href="/" class="flex items-center gap-2">
+                <img src="/img/logo/purple/favicon.svg" alt="Logo Citapote" class="h-10 w-10" />
+                <h1 class="text-2xl md:text-[2rem] citapote-title font-allerta select-none">
+                    <span>Cita</span><span>Pote</span>
+                </h1>
+            </a>
+            <!-- Hamburger bouton mobile -->
+            <button id="mobile-menu-btn" class="ml-auto flex items-center justify-center h-10 w-10 rounded-full text-white shadow-sm xl-strict:hidden" style="background: var(--linear-gradient);">
+                <span class="sr-only">Ouvrir le menu</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+            </button>
+            <!-- Navigation centrée desktop -->
+            <nav class="hidden xl-strict:flex gap-10 text-lg font-medium justify-center flex-1 ml-8">
+                <a href="/#features" class="nav-link">Fonctionnalités</a>
+                <a href="/#faq" class="nav-link">FAQ</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+            <!-- Bouton desktop -->
+            <a href="https://discord.gg/dRjUH5qKZQ"
+                class="btn-primary-effect hidden xl-strict:inline-block px-8 py-2 rounded-full text-white text-lg font-semibold shadow-sm ml-4"
+                style="background: var(--linear-gradient);"
+                target="_blank">
+                🚀 Rejoindre
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 flex flex-col items-center justify-start bg-[var(--primary-color)] text-white text-lg font-semibold pt-12 gap-8 transition-all duration-300 opacity-0 pointer-events-none xl-strict:hidden" style="backdrop-filter: blur(2px);">
+        <button id="close-mobile-menu" class="close-mobile-menu absolute top-6 right-6 h-10 w-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/40 transition">
+            <span class="sr-only">Fermer le menu</span>
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+            <div class="flex items-center gap-3 mb-4">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="/img/logo/orange/favicon.svg" alt="Logo Citapote" class="h-10 w-10" />
+                    <h2 class="close-mobile-menu text-3xl md:text-[2rem] citapote-title font-allerta select-none">
+                        <span>Cita</span><span>Pote</span>
+                    </h2>
+                </a>
+            </div>
+        <nav class="flex flex-col items-center gap-6 w-full">
+            <a href="/#features" class="close-mobile-menu hover:underline text-xl">Fonctionnalités</a>
+            <a href="/#faq" class="close-mobile-menu hover:underline text-xl">FAQ</a>
+            <a href="/contact" class="close-mobile-menu hover:underline text-xl">Contact</a>
+        </nav>
+        <a href="https://discord.gg/dRjUH5qKZQ" class="close-mobile-menu btn-primary-effect mt-8 px-8 py-3 rounded-full text-white shadow text-lg" style="background: var(--linear-gradient);">🚀 Rejoindre</a>
+    </div>
+
+	<!-- Notifications container -->
+	<div id="notif-stack" class="fixed bottom-6 right-1/2 translate-x-1/2 z-30 flex flex-col gap-4 w-[95vw] max-w-xs sm:bottom-6 sm:right-6 sm:translate-x-0 sm:w-auto sm:max-w-sm pointer-events-none max-h-[80vh]">
+
+	<div class="notif-item relative bg-[var(--primary-color)] backdrop-blur-2xl shadow-2xl px-4 py-6 flex flex-col gap-4 items-center rounded-3xl animate-fade-in-notify border border-white/10 pointer-events-auto" style="minWidth: 200px; maxWidth: 360px; marign: 0 auto; position: relative; display:none;" data-type="dontOpen">
+		<button class="notif-close absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/30 text-white text-xl font-bold transition shadow-sm" aria-label="Fermer" tabindex="0">
+		<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+		</button>
+		<div class="flex items-center gap-4 mb-1">
+		<span class="text-3xl drop-shadow-lg">🚧</span>
+		<span class="font-semibold text-white text-lg drop-shadow-lg" style="width: 73%">CitaPote n’est pas encore disponible publiquement.</span>
+		</div>
+		<div class="flex gap-4 mt-2">
+		<a href="/don" class="btn-primary-effect mt-1 px-5 py-2 rounded-full flex items-center gap-2 text-white bg-[var(--secondary-color)] font-semibold shadow-lg text-base self-center hover:scale-105 transition">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24">
+			<path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+			</svg>
+			Faire un don
+		</a>
+		<a href="https://discord.gg/dRjUH5qKZQ" class="btn-primary-effect mt-1 px-5 py-2 rounded-full flex items-center gap-2 text-white bg-white/10 font-semibold shadow-lg text-base self-center">
+			<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256">
+			<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M25.12,6.946c-2.424,-1.948 -6.257,-2.278 -6.419,-2.292c-0.256,-0.022 -0.499,0.123 -0.604,0.357c-0.004,0.008 -0.218,0.629 -0.425,1.228c2.817,0.493 4.731,1.587 4.833,1.647c0.478,0.278 0.638,0.891 0.359,1.368c-0.185,0.318 -0.52,0.496 -0.864,0.496c-0.171,0 -0.343,-0.043 -0.501,-0.135c-0.028,-0.017 -2.836,-1.615 -6.497,-1.615c-3.662,0 -6.471,1.599 -6.499,1.615c-0.477,0.277 -1.089,0.114 -1.366,-0.364c-0.277,-0.476 -0.116,-1.087 0.36,-1.365c0.102,-0.06 2.023,-1.158 4.848,-1.65c-0.218,-0.606 -0.438,-1.217 -0.442,-1.225c-0.105,-0.235 -0.348,-0.383 -0.604,-0.357c-0.162,0.013 -3.995,0.343 -6.451,2.318c-1.284,1.186 -3.848,8.12 -3.848,14.115c0,0.106 0.027,0.209 0.08,0.301c1.771,3.11 6.599,3.924 7.699,3.959c0.007,0.001 0.013,0.001 0.019,0.001c0.194,0 0.377,-0.093 0.492,-0.25l1.19,-1.612c-2.61,-0.629 -3.99,-1.618 -4.073,-1.679c-0.444,-0.327 -0.54,-0.953 -0.213,-1.398c0.326,-0.443 0.95,-0.541 1.394,-0.216c0.037,0.024 2.584,1.807 7.412,1.807c4.847,0 7.387,-1.79 7.412,-1.808c0.444,-0.322 1.07,-0.225 1.395,0.221c0.324,0.444 0.23,1.066 -0.212,1.392c-0.083,0.061 -1.456,1.048 -4.06,1.677l1.175,1.615c0.115,0.158 0.298,0.25 0.492,0.25c0.007,0 0.013,0 0.019,-0.001c1.101,-0.035 5.929,-0.849 7.699,-3.959c0.053,-0.092 0.08,-0.195 0.08,-0.301c0,-5.994 -2.564,-12.928 -3.88,-14.14zM11,19c-1.105,0 -2,-1.119 -2,-2.5c0,-1.381 0.895,-2.5 2,-2.5c1.105,0 2,1.119 2,2.5c0,1.381 -0.895,2.5 -2,2.5zM19,19c-1.105,0 -2,-1.119 -2,-2.5c0,-1.381 0.895,-2.5 2,-2.5c1.105,0 2,1.119 2,2.5c0,1.381 -0.895,2.5 -2,2.5z"></path></g></g>
+			</svg>
+			Rejoindre le Discord
+		</a>
+		</div>
+	</div>
+
+	<div class="notif-item relative bg-[var(--primary-color)] backdrop-blur-2xl shadow-2xl px-4 py-6 flex flex-col gap-4 items-center rounded-3xl animate-fade-in-notify border border-white/10 pointer-events-auto" style="minWidth: 200px; maxWidth: 360px; marign: 0 auto; position: relative; display:none;" data-type="cookie">
+		<button class="notif-close absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/30 text-white text-xl font-bold transition shadow-sm" aria-label="Fermer" tabindex="0">
+		<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+		</button>
+		<div class="flex items-center gap-4 mb-1">
+		<span class="text-3xl drop-shadow-lg">🍪</span>
+		<span class="font-semibold text-white text-sm drop-shadow-lg" style="width: 73%">
+			CitaPote utilise des cookies pour améliorer votre expérience. Acceptez-vous ?
+			<a href="/gestion-des-cookies" class="text-sm text-[var(--secondary-color)] hover:underline underline hover:text-white transition-colors">
+			En savoir plus
+			</a>
+		</span>
+		</div>
+		<div class="flex gap-4 mt-2">
+		<button id="accept-cookies" class="btn-primary-effect px-4 py-2 rounded-full text-white bg-[var(--secondary-color)] font-semibold shadow-lg">
+			Accepter
+		</button>
+		<button id="decline-cookies" class="btn-primary-effect px-4 py-2 rounded-full text-white bg-white/10 font-semibold shadow-lg">
+			Refuser
+		</button>
+		</div>
+	</div>
+
+	<div id="notif-error-item" class="relative bg-[var(--error-color)] backdrop-blur-2xl shadow-2xl px-4 py-6 flex flex-col gap-4 items-center rounded-3xl animate-fade-in-notify border border-white/10 pointer-events-auto" style="minWidth: 200px; maxWidth: 360px; marign: 0 auto; position: relative; display:none;" data-type="Error">
+		<div class="flex items-center gap-4 mb-1">
+		<span class="text-3xl drop-shadow-lg">⚠️</span>
+		<span class="font-semibold text-white text-sm drop-shadow-lg">
+			Une erreur est survenue, réessaie plus tard.
+		</span>
+		</div>
+	</div>
+
+	<div id="notif-many-item" class="relative bg-[var(--error-color)] backdrop-blur-2xl shadow-2xl px-4 py-6 flex flex-col gap-4 items-center rounded-3xl animate-fade-in-notify border border-white/10 pointer-events-auto" style="minWidth: 200px; maxWidth: 360px; marign: 0 auto; position: relative; display:none;" data-type="ErrorMany">
+		<div class="flex items-center gap-4 mb-1">
+		<span class="text-3xl drop-shadow-lg">⚠️</span>
+		<span class="font-semibold text-white text-sm drop-shadow-lg">
+			Trop de demandes détectées. Merci de patienter avant de réessayer.
+		</span>
+		</div>
+	</div>
+
+	<div id="notif-valide-item" class="relative bg-[var(--valide-color)] backdrop-blur-2xl shadow-2xl px-4 py-6 flex flex-col gap-4 items-center rounded-3xl animate-fade-in-notify border border-white/10 pointer-events-auto" style="minWidth: 200px; maxWidth: 360px; marign: 0 auto; position: relative; display:none;" data-type="Valide">
+		<div class="flex items-center gap-4 mb-1">
+		<span class="text-3xl drop-shadow-lg">✔️​</span>
+		<span class="font-semibold text-white text-sm drop-shadow-lg">
+			Ton message a été envoyé avec succès !
+		</span>
+		</div>
+	</div>
+
+	</div>
+
 </header>

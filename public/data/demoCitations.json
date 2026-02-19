@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "content": "J’ai supprimé le bug... en supprimant le projet 😎",
+    "target": "devteam",
+    "author_name": "CodeWizard",
+    "created_at": "2025-09-12T14:22:33.000Z",
+    "reactions": { "🤣": 3, "🔥": 2, "😅": 1 }
+  },
+  {
+    "id": 2,
+    "content": "Mon ordi a planté, je plante aussi pour rester solidaire 🌱",
+    "target": null,
+    "author_name": "RootMan",
+    "created_at": "2025-08-03T09:27:11.000Z",
+    "reactions": { "😂": 10, "💀": 2, "🧠": 1 }
+  },
+  {
+    "id": 3,
+    "content": "CitaPote c’est comme GitHub, mais pour les fous de punchlines 💬",
+    "target": "citapote",
+    "author_name": "LePoteDuWeb",
+    "created_at": "2025-07-25T19:43:56.000Z",
+    "reactions": { "😉": 5, "🔥": 8, "💬": 3 }
+  },
+  {
+    "id": 4,
+    "content": "J’ai tenté de coder sans café... 404 Motivation Not Found ☕",
+    "target": null,
+    "author_name": "SleepyDev",
+    "created_at": "2025-09-02T11:12:47.000Z",
+    "reactions": { "🤣": 15, "😴": 4, "🥱": 2 }
+  },
+  {
+    "id": 5,
+    "content": "Mon jeu a crashé, j’appelle ça une victoire du sommeil 💤",
+    "target": "gamerzone",
+    "author_name": "NightPlayer",
+    "created_at": "2025-08-29T21:50:22.000Z",
+    "reactions": { "😂": 8, "🎮": 6, "😎": 3 }
+  },
+  {
+    "id": 6,
+    "content": "Un pote m’a dit qu’il détestait les bugs. Je lui ai dit ‘t’es pas dev toi’ 💻",
+    "target": null,
+    "author_name": "ByteMe",
+    "created_at": "2025-07-30T15:35:09.000Z",
+    "reactions": { "🤣": 12, "🤓": 5, "💡": 1 }
+  },
+  {
+    "id": 7,
+    "content": "Sur CitaPote, les citations sont plus fraîches qu’un serveur rebooté 🔄",
+    "target": "citapote",
+    "author_name": "FlashQuote",
+    "created_at": "2025-09-10T18:17:42.000Z",
+    "reactions": { "🔥": 9, "😉": 3, "💬": 2 }
+  }
+]

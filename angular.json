@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TaskBoard": {
+    "CitaPote": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/task-board",
+            "outputPath": "dist/citapote",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,7 +29,19 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "public/js/typewriter.js",
+              "public/js/scroll-animate.js",
+              "public/js/faq.js",
+              "public/data/js/popupData.js",
+              "public/js/popup.js",
+              "public/js/header.js",
+              "public/js/notif.js",
+              "public/data/js/discordWidgetData.js",
+              "public/js/discordWidget.js",
+              "public/js/contactForm.js",
+              "public/js/penne.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -59,10 +71,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TaskBoard:build:production"
+              "buildTarget": "CitaPote:build:production"
             },
             "development": {
-              "buildTarget": "TaskBoard:build:development"
+              "buildTarget": "CitaPote:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +99,19 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "public/js/typewriter.js",
+              "public/js/scroll-animate.js",
+              "public/js/faq.js",
+              "public/data/js/popupData.js",
+              "public/js/popup.js",
+              "public/js/header.js",
+              "public/js/notif.js",
+              "public/data/js/discordWidgetData.js",
+              "public/js/discordWidget.js",
+              "public/js/contactForm.js",
+              "public/js/penne.js"
+            ]
           }
         }
       }

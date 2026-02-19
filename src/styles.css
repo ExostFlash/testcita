@@ -1,1 +1,590 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Allerta Stencil";
+  src: url("/fonts/AllertaStencil-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* =========================================================
+   🎨 Variables globales
+   ========================================================= */
+:root {
+  --primary-color: #3e2374;
+  --secondary-color: #f47920;
+  --bg: #fafafa;
+  --card-bg: #ffffff;
+  --text: #222;
+  --linear-gradient: linear-gradient(135deg, #3e2374 0%, #f47920 100%);
+
+  --bubble-anim-duration: 0.4s;
+  --bubble-anim-ease: ease;
+  --bubble-hover-scale: 1.2;
+  --bubble-disappear-scale: 0.5;
+
+  --card-disappear-scale: 0.9;
+  --card-anim-duration: 0.3s;
+  --card-anim-ease: ease;
+
+  --error-color: #9e1414;
+  --valide-color: #149e3d;
+}
+
+/* =========================================================
+   🌈 Base & Structure
+   ========================================================= */
+body {
+  background: radial-gradient(circle at 20% 30%, #b6b5e6 0%, #ffe5c7 80%);
+  overflow-x: hidden;
+}
+
+header {
+  transition: all 0.3s ease;
+}
+
+.btn-primary-effect {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-primary-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.overflow-setup::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: #a4a4a484;
+  border-radius: 6px;
+}
+
+.overflow-setup::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  border: 3px solid transparent;
+}
+
+.overflow-setup::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* =========================================================
+   🧭 Navigation
+   ========================================================= */
+.nav-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.nav-link {
+  color: var(--primary-color);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+}
+
+/* =========================================================
+   🪶 Titres & Textes
+   ========================================================= */
+.citapote-title {
+  letter-spacing: 0.5px;
+}
+
+.citapote-title span:first-child {
+  color: var(--primary-color);
+}
+
+#mobile-menu .citapote-title span:first-child {
+  color: #ffffff;
+}
+
+.citapote-title span:last-child {
+  color: var(--secondary-color);
+}
+
+.citapote-title span.text {
+  color: black;
+}
+
+.gradient-text {
+  background: var(--linear-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================================
+    ✍️ Effet Typewriter
+   ========================================================= */
+
+@media (min-width: 768px) {
+  .typewriter-effect {
+    display: flex;
+  }
+
+  .typewriter-effect > .text {
+    max-width: 0;
+    animation: typing 12s steps(var(--characters)) infinite;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .typewriter-effect:after {
+    content: " |";
+    color: var(--primary-color);
+    animation: blink 0.5s infinite;
+    animation-timing-function: step-end;
+  }
+}
+
+@keyframes typing {
+  75%,
+  100% {
+    max-width: calc(var(--characters) * 1ch);
+  }
+}
+
+@keyframes blink {
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   💳 Cartes
+   ========================================================= */
+
+/* --- Carte de citation --- */
+.quote-card {
+  display: flex;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.side-color {
+  width: 8px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+.quote-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.85rem;
+}
+
+.quote-text {
+  height: 4.25em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quote-author {
+  margin-top: 0rem;
+  font-style: italic;
+  color: var(--primary-color);
+}
+
+.reactions {
+  display: flex;
+  gap: 0.5rem;
+  height: 1.25em;
+}
+
+/* =========================================================
+   💬 FAQ
+   ========================================================= */
+.faq-item button {
+  transition: background 0.2s ease;
+}
+
+.faq-item button:hover {
+  background: #f9f9f9;
+}
+
+/* =========================================================
+   🍏 Effet "Glassmorphism"
+   ========================================================= */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* =========================================================
+   🌀 Carrousel
+   ========================================================= */
+.carousel {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+/* =========================================================
+   🏷️ Titres Premium + Paragraphes
+   ========================================================= */
+.h3-premium {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 2.2rem 0 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.p-premium {
+  margin: 0 0 1.1rem 2.5rem;
+  padding-left: 0.2rem;
+  color: #374151;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  border-radius: 0.5rem;
+}
+
+.ul-premium > li {
+  margin: 0 0 0.8rem 4.5rem;
+  padding-left: 0.5rem;
+  color: #374151;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  border-left: 3px solid var(--primary-color);
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(120, 119, 198, 0.09) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  box-shadow: 0 1px 8px rgba(120, 119, 198, 0.04);
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+/* =========================================================
+   ⚙️ Animations
+   ========================================================= */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.emoji-bounce {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-in-notify {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in-notify {
+  animation: fade-in-notify 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in,
+.animate-fade-up,
+.animate-fade-down {
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section div[class*="relative.mb-10"] {
+  animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bubbleFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Disparition de la bulle */
+@keyframes bubbleFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(var(--bubble-disappear-scale));
+  }
+}
+
+/* Disparition de la card */
+@keyframes cardFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(var(--card-disappear-scale));
+  }
+}
+
+/* =========================================================
+   🏷️ Notifications
+   ========================================================= */
+.notif-bubble {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  animation: bubbleFadeIn var(--bubble-anim-duration) var(--bubble-anim-ease)
+    forwards;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+.notif-bubble:hover {
+  transform: scale(var(--bubble-hover-scale));
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+}
+
+.notif-bubble.disappear {
+  animation: bubbleFadeOut 0.3s var(--bubble-anim-ease) forwards;
+}
+
+.notif-item.disappear {
+  animation: cardFadeOut var(--card-anim-duration) var(--card-anim-ease)
+    forwards;
+}
+
+/* =========================================================
+   🏷️ Badges & Divers
+   ========================================================= */
+.roadmap-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2em 0.8em;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+#popup-content ul {
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 0.5rem;
+}
+
+#popup-content li {
+  margin-left: 0;
+}
+
+#popup-content em {
+  font-style: italic;
+}
+
+/* =========================================================
+   🚨 Page d’erreur
+   ========================================================= */
+img.error {
+  width: 160px;
+  margin-bottom: 1rem;
+}
+
+h1.error {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin: 0.2rem 0;
+}
+
+h2.error {
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+p.error {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   🪄 Images flottantes
+   ========================================================= */
+.fun-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.fun-imgs img {
+  width: 64px;
+  height: 64px;
+  opacity: 0.9;
+  animation: float 3s ease-in-out infinite;
+}
+
+.fun-imgs img:nth-child(2n) {
+  animation-delay: 0.7s;
+}
+
+/* =========================================================
+   📱 Responsive
+   ========================================================= */
+@media (max-width: 640px) {
+  .h3-premium {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+  }
+
+  .p-premium {
+    font-size: 0.98rem;
+    margin-left: auto;
+  }
+
+  .relative > ul > li {
+    margin-left: 0.5rem;
+  }
+
+  section .max-w-3xl::before {
+    left: 0.25rem !important;
+  }
+
+  .roadmap-badge {
+    font-size: 0.7rem;
+  }
+
+  section h3 {
+    font-size: 1rem;
+  }
+
+  section p {
+    font-size: 0.9rem;
+  }
+  #custom-amount-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  #custom-amount-validate {
+    align-self: center !important;
+    width: 100%;
+    max-width: 220px;
+  }
+  #custom-amount-input {
+    max-width: 80% !important;
+  }
+}
+
+#custom-amount-input {
+  width: 320px !important;
+}
+
+#contact-form input:focus-visible,
+#contact-form textarea:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+@keyframes scrollFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(18px) scale(0.99);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.visible {
+  animation: scrollFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}

@@ -1,0 +1,176 @@
+{
+  "web": {
+    "logo": "🌐",
+    "title": "Site Web",
+    "comingSoon": "Le site web CitaPote est en cours de développement ! Reste à l'écoute pour plus d'infos.",
+    "color": "[var(--primary-color)]",
+    "status": "En ligne",
+    "colorStatus": "bg-green-500/10 text-green-600 border-green-500/20",
+    "steps": [
+      {
+        "version": "Concept",
+        "status": "false",
+        "date": "Non planifié",
+        "changes": [
+          "Création compte/Connexion (Discord, Google, ...)",
+          "Création de groupes",
+          "Ajout de citations (Public/Groupe)",
+          "Réagir aux messages",
+          "Ajout membres aux groupes",
+          "Settings"
+        ]
+      },
+      {
+        "version": "v0.1-beta",
+        "status": "true",
+        "date": "21 Octobre 2025",
+        "changes": [
+          "Page d'accueil et de contact",
+          "Error pages 400/404/500",
+          "CGU, Politique de confidentialité, Mentions légales, Cookies",
+          "Discord Server",
+          "Notifications",
+          "Contact form fonctionnel (Email)"
+        ]
+      },
+      {
+        "version": "v0.1",
+        "status": "true",
+        "date": "04 Décembre 2025",
+        "changes": [
+          "Element de {v0.1-beta} corrigés/optimisés",
+          "Ajout page de don (via Stripe)",
+          "Ajout CDN",
+          "Optimisation SEO"
+        ]
+      },
+      {
+        "version": "v1.0-beta",
+        "status": "false",
+        "date": "À venir",
+        "changes": [
+          "Element de {v0.1} corrigés/optimisés",
+          "Création compte/Connexion",
+          "Ajout de citations",
+          "Réactions aux messages",
+          "Création de groupes",
+          "Settings"
+        ]
+      },
+      {
+        "version": "v2.0-beta",
+        "status": "false",
+        "date": "À venir",
+        "changes": ["Mode sombre", "Vue des profils"]
+      }
+    ]
+  },
+  "api": {
+    "logo": "🔗",
+    "title": "API Publique",
+    "comingSoon": "L'API publique CitaPote arrive bientôt ! Reste à l'écoute pour plus d'infos.",
+    "color": "[var(--secondary-color)]",
+    "status": "En préparation",
+    "colorStatus": "bg-yellow-400/10 text-yellow-700 border-yellow-400/30",
+    "steps": [
+      {
+        "version": "Concept",
+        "status": "false",
+        "date": "Non planifié",
+        "changes": [
+          "Gestion des citations, comptes et groupes",
+          "Génération Citations IA (1/mois)",
+          "Surveillance des citations publiques via l'IA (Gemini)"
+        ]
+      },
+      {
+        "version": "v0.1-beta",
+        "status": "true",
+        "date": "Août 2025",
+        "changes": [
+          "Endpoints GET, POST, PUT, DELETE",
+          "Admin access",
+          "Surveillance des citations publiques via l'IA (Gemini)",
+          "Documentation initiale (Swagger)"
+        ]
+      },
+      {
+        "version": "v1.0-beta",
+        "status": "false",
+        "date": "À venir",
+        "changes": [
+          "Endpoints GET /citations",
+          "Public access",
+          "Stats d’utilisation",
+          "Auth Token"
+        ]
+      }
+    ]
+  },
+  "bot": {
+    "logo": "🤖",
+    "title": "Bot Discord",
+    "comingSoon": "Le bot Discord CitaBot arrive bientôt ! Reste à l'écoute pour plus d'infos.",
+    "color": "[#5865F2]",
+    "status": "En préparation",
+    "colorStatus": "bg-yellow-400/10 text-yellow-700 border-yellow-400/30",
+    "steps": [
+      {
+        "version": "Concept",
+        "status": "false",
+        "date": "Non planifié",
+        "changes": [
+          "Commandes de gestion des citations",
+          "Intégration avec le site web",
+          "Réactions aux messages"
+        ]
+      },
+      {
+        "version": "v0.1-beta",
+        "status": "true",
+        "date": "22 Octobre 2025",
+        "changes": ["Help commande", "Information commande"]
+      },
+      {
+        "version": "v0.1",
+        "status": "false",
+        "date": "À venir",
+        "changes": ["Element de {v0.1-beta} corrigés/optimisés"]
+      },
+      {
+        "version": "v1.0-beta",
+        "status": "false",
+        "date": "À venir",
+        "changes": [
+          "Ajout de citations",
+          "Réactions aux messages",
+          "Création de groupes"
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "logo": "📱",
+    "title": "Application mobile",
+    "comingSoon": "L’application mobile CitaPote arrive bientôt ! Reste à l'écoute pour plus d'infos.",
+    "color": "pink-500",
+    "status": "Idée",
+    "colorStatus": "bg-gray-200 text-gray-700 border-gray-300",
+    "steps": [
+      {
+        "version": "Concept",
+        "status": "false",
+        "date": "Non planifié",
+        "changes": [
+          "Création compte/Connexion (Discord, Google, ...)",
+          "Création de groupes",
+          "Ajout de citations (Public/Groupe)",
+          "Réagir aux messages",
+          "Ajout membres aux groupes",
+          "Settings",
+          "Notifications de citations"
+        ]
+      }
+    ]
+  }
+}

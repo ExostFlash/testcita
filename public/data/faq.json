@@ -1,0 +1,14 @@
+[
+  {
+    "question": "🧐 Qu’est-ce que CitaPote ?",
+    "answer": "CitaPote, c’est bien plus qu’un mur de citations : c’est un espace vivant où tu peux partager tes pensées, réagir avec la communauté et découvrir des émotions chaque jour. Ici, chaque citation crée du lien et chaque réaction fait vibrer le réseau social dédié à l’inspiration et à l’humour !"
+  },
+  {
+    "question": "💸 Est-ce gratuit ?",
+    "answer": "Oui, CitaPote est 100% gratuit : pas de pub, pas de données vendues, même pas de gros fichiers secrets dans la base (promis, on a cherché). Consulte nos <a class=\"font-bold text-[var(--primary-color)] hover:text-[var(--secondary-color)] transition-colors\" href=\"/cgu\">CGU</a> pour plus d’infos. Seuls tes dons nous aident à faire tourner la machine à citations. <a class=\"font-bold text-[var(--primary-color)] hover:text-[var(--secondary-color)] transition-colors\" href=\"/don\">Soutenir CitaPote</a>."
+  },
+  {
+    "question": "💬 Comment rejoindre la communauté ?",
+    "answer": "Viens échanger sur <a class=\"font-bold text-[var(--primary-color)] hover:text-[var(--secondary-color)] transition-colors\" href=\"https://discord.gg/dRjUH5qKZQ\" target=\"_blank\">Discord</a> et plonge dans une communauté où l’entraide, la bonne humeur et le partage sont au rendez-vous. On t’attend pour écrire la suite de l’histoire avec toi !"
+  }
+]

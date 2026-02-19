@@ -1,1 +1,200 @@
-<p>Home works!</p>
+<!-- HERO -->
+<section class="flex flex-col items-center text-center px-6 pt-32 pb-20">
+  <h2 class="text-5xl md:text-6xl mb-6 tracking-tight citapote-title font-allerta typewriter-effect">
+    <!-- Mobile : texte statique -->
+    <span class="text md:hidden">Bienvenue sur <span id="cita">Cita</span><span id="pote">Pote</span></span>
+    <!-- Desktop : typewriter -->
+    <span id="typewriter-text" class="text md:inline-block hidden"></span>
+  </h2>
+  <p class="max-w-2xl text-lg text-gray-600 mb-8 leading-relaxed">
+    L’endroit où les <span class="text-[var(--secondary-color)] font-semibold">citations</span> rencontrent les <span class="text-[var(--primary-color)] font-semibold">réactions</span>.<br>
+    Un espace calme, inspirant et pensé pour le partage d’émotions.
+  </p>
+  <a href="https://discord.gg/dRjUH5qKZQ"
+     class="btn-primary-effect px-8 py-3 rounded-full text-white text-lg font-semibold shadow-md"
+     style="background: var(--linear-gradient);"
+     target="_blank">
+     🚀 Rejoindre le Discord
+  </a>
+</section>
+
+<!-- FEATURE CARDS -->
+<section id="features" class="scroll-animate flex flex-wrap justify-center gap-8 px-6 py-20 bg-white">
+  <div class="flex flex-wrap justify-center gap-8 max-w-5xl w-full mx-auto">
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 w-80 text-center">
+      <div class="flex items-center justify-center mb-3 gap-3">
+        <span class="emoji-bounce text-4xl">💡</span>
+  <h3 class="text-xl font-semibold mb-0 text-left text-[var(--primary-color)]">Inspire-toi</h3>
+      </div>
+      <p class="text-gray-600 mt-2">Découvre chaque jour des citations originales et inspirantes, sélectionnées et partagées par la communauté.</p>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 w-80 text-center">
+      <div class="flex items-center justify-center mb-3 gap-3">
+        <span class="emoji-bounce text-4xl">😄</span>
+  <h3 class="text-xl font-semibold mb-0 text-left text-[var(--primary-color)]">Réagis avec style</h3>
+      </div>
+      <p class="text-gray-600 mt-2">Exprime tes émotions à travers des réactions personnalisées et colorées, pour donner vie aux citations.</p>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 w-80 text-center">
+      <div class="flex items-center justify-center mb-3 gap-3">
+        <span class="emoji-bounce text-4xl">🔥</span>
+  <h3 class="text-xl font-semibold mb-0 text-left text-[var(--primary-color)]">Crée du lien</h3>
+      </div>
+      <p class="text-gray-600 mt-2">Partage, échange et vis des moments uniques avec une communauté passionnée et bienveillante.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARROUSEL -->
+<section class="scroll-animate overflow-hidden py-24 bg-[var(--bg)]">
+  <h2 class="text-3xl font-semibold text-center mb-10 gradient-text">✨ Citations du Moment</h2>
+  <div class="relative w-full flex justify-center">
+    <div class="w-full max-w-7xl overflow-hidden relative">
+      <!-- Fades left/right -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-12 z-10" style="background:linear-gradient(to right, var(--bg) 60%, transparent);"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-12 z-10" style="background:linear-gradient(to left, var(--bg) 60%, transparent);"></div>
+      <div class="carousel mb-10">
+        <div class="flex gap-6 px-6">
+          <ng-container *ngFor="let citation of carouselCitations">
+            <div class="quote-card">
+              <div class="side-color"></div>
+              <div class="quote-content w-72 h-40 flex p-6 shadow-sm">
+                <p class="quote-text">"{{ citation.content }}"</p>
+                <p class="quote-author">
+                  – {{ citation.author_name }}
+                  <ng-container *ngIf="citation.target">({{ citation.target }})</ng-container>
+                </p>
+                <div class="reactions">
+                  <span class="reaction" *ngFor="let reaction of citation.reactions | keyvalue">
+                    {{ reaction.key }}{{ reaction.value }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Clone -->
+          <ng-container *ngFor="let citation of carouselCitations">
+            <div class="quote-card">
+              <div class="side-color"></div>
+              <div class="quote-content w-72 h-40 flex p-6 shadow-sm">
+                <p class="quote-text">"{{ citation.content }}"</p>
+                <p class="quote-author">
+                  – {{ citation.author_name }}
+                  <ng-container *ngIf="citation.target">({{ citation.target }})</ng-container>
+                </p>
+                <div class="reactions">
+                  <span class="reaction" *ngFor="let reaction of citation.reactions | keyvalue">
+                    {{ reaction.key }} {{ reaction.value }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLICATION CITAPOTE -->
+<section class="scroll-animate px-6 py-20 bg-white">
+  <h2 class="text-3xl font-semibold text-center mb-8 gradient-text">📝 Qu’est-ce que CitaPote ?</h2>
+  <p class="text-gray-700 text-base md:text-lg leading-relaxed text-center max-w-2xl mx-auto mb-10">
+    CitaPote, c’est le mur de toutes les citations : partage, découvre, réagis.<br>
+    Ajoute tes phrases favorites ou inventées, et amuse-toi avec la communauté grâce aux réactions emoji.
+  </p>
+  <div class="flex flex-wrap justify-center gap-8 max-w-5xl w-full mx-auto">
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 w-80 text-center">
+      <div class="flex items-center justify-center mb-3 gap-3">
+        <span class="emoji-bounce text-4xl">💾</span>
+          <h3 class="text-xl font-semibold mb-0 text-left text-[var(--primary-color)]">Garde tes meilleures phrases</h3>
+      </div>
+      <p class="text-gray-600 mt-2">Retrouve facilement les citations qui t’inspirent ou te font rire.</p>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 w-80 text-center">
+      <div class="flex items-center justify-center mb-3 gap-3">
+        <span class="emoji-bounce text-4xl">🤝</span>
+          <h3 class="text-xl font-semibold mb-0 text-left text-[var(--primary-color)]">Partage avec la communauté</h3>
+      </div>
+      <p class="text-gray-600 mt-2">Fais découvrir tes trouvailles à tes amis ou à tous les membres.</p>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 w-80 text-center">
+      <div class="flex items-center justify-center mb-3 gap-3">
+        <span class="emoji-bounce text-4xl">🔍</span>
+          <h3 class="text-xl font-semibold mb-0 text-left text-[var(--primary-color)]">Découvre les citations des autres</h3>
+      </div>
+      <p class="text-gray-600 mt-2">Explore un mur vivant de phrases inspirantes ou amusantes.</p>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 w-80 text-center">
+      <div class="flex items-center justify-center mb-3 gap-3">
+        <span class="emoji-bounce text-4xl">🎉</span>
+          <h3 class="text-xl font-semibold mb-0 text-left text-[var(--primary-color)]">Crée un espace fun et vivant</h3>
+      </div>
+      <p class="text-gray-600 mt-2">Réagis et anime la communauté autour des citations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="scroll-animate py-20 px-6 bg-[var(--bg)] border-t border-gray-100">
+  <h2 class="text-3xl font-semibold text-center mb-12 gradient-text">❓ Foire aux Questions</h2>
+  <div class="max-w-3xl mx-auto space-y-4">
+    <div class="faq-item border border-gray-200 rounded-xl overflow-hidden" *ngFor="let faq of faqItems">
+      <button class="open-faq-btn w-full text-left px-6 py-4 font-semibold flex justify-between items-center">
+        <span class="text-[var(--primary-color)]">{{ faq.question }}</span>
+        <span>+</span>
+      </button>
+      <div class="hidden px-6 pb-4 text-gray-600" style="padding-top: 0.5rem;" [innerHTML]="faq.answer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP APPLE-LIKE -->
+<section id="roadmap" class="scroll-animate py-20 px-6 bg-white border-t border-gray-100">
+  <h2 class="text-3xl font-semibold text-center mb-12 gradient-text">🚀 Quoi de prévu&nbsp;?</h2>
+  <div class="relative max-w-3xl mx-auto">
+    <!-- Ligne verticale -->
+    <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-[var(--primary-color)] to-[var(--secondary-color)] opacity-50"></div>
+    <!-- Étape -->
+    <div class="relative mb-10 flex flex-col items-center text-center" *ngFor="let roadmap of roadmaps">
+      <div class="z-10 bg-white border border-gray-200 shadow-sm rounded-2xl px-6 py-4 w-full sm:w-[80%] backdrop-blur-lg transition hover:shadow-md">
+        <div class="flex justify-center items-center gap-2 mb-2">
+          <span class="text-2xl">{{ roadmap.logo }}</span>
+          <h3 class="font-semibold text-lg" [ngClass]="roadmap.textColorClass">{{ roadmap.title }}</h3>
+          <span class="roadmap-badge border" [ngClass]="roadmap.colorStatus">{{ roadmap.status }}</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">{{ roadmap.comingSoon }}</p>
+        <p class="mt-2 text-xs text-gray-400" *ngIf="roadmap.latestVersion">Version actuelle&nbsp;: <strong>{{ roadmap.latestVersion }}</strong></p>
+        <button class="open-popup-btn mt-4 text-sm font-medium text-[var(--primary-color)] hover:underline" [attr.data-key]="roadmap.key">Voir la progression →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="popup-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-md hidden justify-center items-center z-50 px-4">
+  <div class="bg-white/90 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-3xl max-w-3xl w-full p-8 max-h-[85vh] animate-fadeInUp">
+    <button class="close-popup-btn absolute top-6 right-6 text-gray-500 hover:text-black text-xl font-bold">✕</button>
+    <h3 id="popup-title" class="text-2xl font-semibold mb-6 text-center" style="width: 97%;"></h3>
+    <div id="popup-content" class="overflow-setup overflow-y-auto space-y-6 max-h-[70vh] px-4">
+      <!-- Contenu roadmap dynamique -->
+    </div>
+  </div>
+</div>
+
+<!-- SECTION AJOUTER LE BOT DISCORD -->
+<section id="botdiscord" class="scroll-animate flex flex-col items-center text-center py-20 px-6 bg-[var(--bg)] border-t border-gray-100">
+  <h2 class="text-3xl font-semibold text-center mb-12 gradient-text">🤖 Ajoute le bot Discord</h2>
+  <p class="max-w-xl text-lg text-gray-600 mb-6 leading-relaxed mx-auto">
+    Invite <span class="text-[var(--primary-color)] font-semibold">CitaBot</span> sur ton serveur Discord et profite de fonctionnalités exclusives :<br>
+    citations, réactions, fun et bien plus encore pour animer ta communauté !
+  </p>
+  <a href="https://discord.com/discovery/applications/1430336251525070999"
+     class="btn-primary-effect px-8 py-3 rounded-full text-white text-lg font-semibold shadow-md"
+     style="background: var(--linear-gradient);"
+     target="_blank">
+    ➕ Ajouter le bot
+  </a>
+  <p class="mt-4 text-sm text-gray-400">
+    Une question ou besoin d’aide ? <a href="https://discord.gg/dRjUH5qKZQ" class="text-[var(--secondary-color)] hover:underline" target="_blank">Rejoins notre support</a>
+  </p>
+</section>

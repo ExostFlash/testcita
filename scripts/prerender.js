@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const distRoot = path.join(process.cwd(), 'dist', 'citapote');
-const indexPath = path.join(distRoot, 'index.html');
+const browserRoot = path.join(distRoot, 'browser');
+const outputRoot = fs.existsSync(browserRoot) ? browserRoot : distRoot;
+const indexPath = path.join(outputRoot, 'index.html');
 
 if (!fs.existsSync(indexPath)) {
   console.error('[prerender] index.html not found at', indexPath);
@@ -25,7 +27,7 @@ const indexHtml = fs.readFileSync(indexPath, 'utf8');
 routes
   .filter((route) => route.length > 0)
   .forEach((route) => {
-    const routeDir = path.join(distRoot, route);
+    const routeDir = path.join(outputRoot, route);
     fs.mkdirSync(routeDir, { recursive: true });
     fs.writeFileSync(path.join(routeDir, 'index.html'), indexHtml);
   });

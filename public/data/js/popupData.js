@@ -1,7 +1,7 @@
 (function () {
   async function loadPopupData() {
     try {
-      const response = await fetch('/data/appsVersions.json', { cache: 'no-store' });
+      const response = await fetch('data/appsVersions.json', { cache: 'no-store' });
       if (!response.ok) {
         throw new Error(`Failed to load popup data: ${response.status}`);
       }

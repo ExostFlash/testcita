@@ -18,8 +18,10 @@ window.citadev = () => {
     "%cVoici quelques infos utiles :",
     "color:#10b981; font-weight:bold;"
   );
+  const appVersion = window.APP_VERSION ? `v${window.APP_VERSION}` : "v0.1";
+
   console.table({
-    "Version du site": "v0.1",
+    "Version du site": appVersion,
     Serveur: "MecDu.Dev",
     "En ligne depuis": (() => {
       const publicationDate = new Date("2025-12-04"); // Date définie par l'utilisateur

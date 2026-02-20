@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
+import packageInfo from '../../../../package.json';
 
 interface Citation {
   id: number;
@@ -48,6 +49,7 @@ interface RoadmapEntry extends Roadmap {
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  readonly appVersion = packageInfo.version;
   citations: Citation[] = [];
   carouselCitations: Citation[] = [];
   faqItems: FaqItem[] = [];

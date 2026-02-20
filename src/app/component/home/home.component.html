@@ -164,7 +164,8 @@
           <span class="roadmap-badge border" [ngClass]="roadmap.colorStatus">{{ roadmap.status }}</span>
         </div>
         <p class="text-gray-600 text-sm leading-relaxed">{{ roadmap.comingSoon }}</p>
-        <p class="mt-2 text-xs text-gray-400" *ngIf="roadmap.latestVersion">Version actuelle&nbsp;: <strong>{{ roadmap.latestVersion }}</strong></p>
+        <p class="mt-2 text-xs text-gray-400" *ngIf="roadmap.key === 'web' && appVersion">Version actuelle&nbsp;: <strong>v{{ appVersion }}</strong></p>
+        <p class="mt-2 text-xs text-gray-400" *ngIf="roadmap.key !== 'web' && roadmap.latestVersion">Version actuelle&nbsp;: <strong>{{ roadmap.latestVersion }}</strong></p>
         <button class="open-popup-btn mt-4 text-sm font-medium text-[var(--primary-color)] hover:underline" [attr.data-key]="roadmap.key">Voir la progression →</button>
       </div>
     </div>
